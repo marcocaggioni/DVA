@@ -6,10 +6,10 @@ WORKDIR /home/main/notebooks
 USER root
 COPY . /home/main/notebooks/
 RUN chown -R main:main $HOME/notebooks
-RUN pip install ipywidgets --upgrade
+RUN conda install -c conda-forge ipywidgets
+RUN $HOME/anaconda2/envs/python3/bin/conda install -c conda-forge ipywidgets
 
 USER main
-RUN conda install -c conda-forge ipywidgets
 RUN find $HOME/notebooks -name '*.ipynb' -exec jupyter trust {} \;
 
 
