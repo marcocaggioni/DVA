@@ -8,7 +8,7 @@ COPY . /home/main/notebooks/
 RUN chown -R main:main $HOME/notebooks
 USER main
 
-RUN conda install -c conda-forge -c scitools -c scitools/label/dev cube_browser ipywidgets
+RUN conda install -c conda-forge ipywidgets
 
 RUN find $HOME/notebooks -name '*.ipynb' -exec jupyter trust {} \;
 
