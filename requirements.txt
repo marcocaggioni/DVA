@@ -1,3 +1,6 @@
-ipywidgets
+numpy
+scipy
+ipywidgets>=5.0
+jupyter
 pims
 trackpy
