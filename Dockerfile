@@ -9,7 +9,7 @@ RUN chown -R main:main $HOME/notebooks
 RUN pip install ipywidgets --upgrade
 
 USER main
-
+RUN conda install -c conda-forge ipywidgets
 RUN find $HOME/notebooks -name '*.ipynb' -exec jupyter trust {} \;
 
 
